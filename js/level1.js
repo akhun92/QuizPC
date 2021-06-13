@@ -71,7 +71,6 @@ class level1 extends Phaser.Scene
             this.reloj.setTint(0xFF0000);
         }
         if(this.reloj.tiempo==0){
-            this.reloj.timer.destroy();
             this.sound.play('snd_KO');
             for(var i in this.botones)
             {
