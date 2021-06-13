@@ -25,6 +25,8 @@ class level1 extends Phaser.Scene
             this.ordenPreguntas.sort(() => Math.random() - 0.5)
             console.log(this.ordenPreguntas);
         }
+
+        this.load.atlas('flares','flares.png','flares.json');
         
         //this.load.spritesheet('slime','slime.png',{frameWidth:32,frameHeight:32});
         //this.load.image('puerta2','spr_door_open_0.png');
@@ -175,7 +177,9 @@ class level1 extends Phaser.Scene
                 this.sound.play('snd_OK');
                 this.myPoints+=100;
                 this.pintaPuntuacion();
+                this.flareAction(true);
             }else
+                this.flareAction(false);
             {
                 _boton.setColor('red');
                 this.sound.play('snd_KO');
@@ -225,13 +229,13 @@ class level1 extends Phaser.Scene
     borraPregunta()
     {
         this.preguntaText.destroy();
-        this.imagen.destroy();
         this.opcionA.destroy();
         this.opcionB.destroy();
         this.opcionC.destroy();
         this.opcionD.destroy();
         this.reloj.timer.destroy();
         this.reloj.destroy();
+        this.particles.destroy();
         
     }
     
@@ -250,6 +254,35 @@ class level1 extends Phaser.Scene
         ,this); */
     }
     
+    flareAction(correct) {
+        this.imagen.destroy();
+        this.particles = this.add.particles('flares');
+        if (correct) {
+            this.particles.createEmitter({
+                frame: 'green',
+                x: gameOptions.ancho/2, y: gameOptions.alto/2,
+                lifespan: { min: 600, max: 1200 },
+                angle: { start: 0, end: 360, steps: 64 },
+                speed: 200,
+                quantity: 64,
+                scale: { start: 0.2, end: 0.1 },
+                frequency: 32,
+                blendMode: 'ADD'
+            });
+        }else {
+            this.particles.createEmitter({
+                frame: 'red',
+                x: gameOptions.ancho/2, y: gameOptions.alto/2,
+                lifespan: 1200,
+                angle: { start: 0, end: 360, steps: 32 },
+                speed: 200,
+                quantity: 16,
+                scale: { start: 0.3, end: 0 },
+                frequency: 64,
+                blendMode: 'ADD'
+            });
+        }
+    }
     
     
     update()
