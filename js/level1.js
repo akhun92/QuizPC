@@ -40,8 +40,6 @@ class level1 extends Phaser.Scene
                         
         this.loadInputManager();
         
-        this.pintaComodines();
-        
         this.pintaTimer();
         
     }
@@ -85,29 +83,6 @@ class level1 extends Phaser.Scene
         }
     }
     
-    pintaComodines()
-    {
-        this.comodin = this.add.sprite(50,gameOptions.alto/2,'wildcard').setScale(.5).setInteractive({useHandCursor: true});
-        
-        this.comodin.on('pointerup',function(pointer)
-        {
-            var respuestasPendientes = 2;
-            
-            for(var i in this.botones)
-                {
-                    if(this.botones[i].text !=gameOptions.questions.Questions[this.ordenPreguntas[0]].Correct)
-                    {
-                        this.botones[i].setColor('red');
-                        respuestasPendientes--;
-                        if(respuestasPendientes==0)
-                        {
-                            break;
-                        }
-                    }
-                }    
-        },this);
-    }
-    
     pintaPuntuacion()
     {
         if(this.puntuacionTexto==undefined ||this.puntuacionTexto==null)
@@ -129,7 +104,7 @@ class level1 extends Phaser.Scene
         this.preguntaStyle = {
          fontFamily: 'Arial Black', 
          fill: '#FFFFFF',
-         stroke: '#000000',
+         stroke: '#00000',
          strokeThickness: 10,
          fontSize:20
         };
@@ -184,7 +159,7 @@ class level1 extends Phaser.Scene
         _boton.setInteractive({useHandCursor: true});
         _boton.on('pointerover',function(pointer)
         {
-            _boton.setStroke('yellow',4);    
+            _boton.setStroke('blue',4);    
         },this);
         
         _boton.on('pointerout',function(pointer)

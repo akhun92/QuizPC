@@ -24,16 +24,16 @@ class menu extends Phaser.Scene
         this.titulo = this.add.text(gameOptions.ancho/2, 150, 'EUG QUIZ', 
         {fontFamily: 'Arial Black', 
          fill: '#FFFFFF',
-         stroke: '#000000',
+         stroke: '#24F3E0',
          strokeThickness: 10,
          fontSize:80
         })
         .setOrigin(0.5);
         
-        this.play = this.add.text(gameOptions.ancho/2, 450, 'Press Space to Start!', 
+        this.play = this.add.text(gameOptions.ancho/2, 450, 'Presiona el espacio para empezar!', 
         {fontFamily: 'Arial Black', 
          fill: '#FFFFFF',
-         stroke: '#000000',
+         stroke: '#24F3E0',
          strokeThickness: 5,
          fontSize:40
         })

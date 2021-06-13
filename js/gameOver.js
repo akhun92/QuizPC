@@ -53,19 +53,19 @@ class gameOver extends Phaser.Scene
          strokeThickness: 10,
          fontSize:80
         }
-        this.titulo = this.add.text(gameOptions.ancho/2, 150, 'BEST SCORE', this.textStyle
+        this.titulo = this.add.text(gameOptions.ancho/2, 150, 'Mejor Puntuacion', this.textStyle
         )
         .setOrigin(0.5);
         
-        this.textActual = this.add.text(gameOptions.ancho/2, 300, 'My actual SCORE WAS: '+localStorage.getItem('actual'),this.textStyle)
+        this.textActual = this.add.text(gameOptions.ancho/2, 300, 'Puntuacion actual: '+localStorage.getItem('actual'),this.textStyle)
         .setOrigin(0.5);
         this.textActual.setFontSize(40);
         
-        this.textBest = this.add.text(gameOptions.ancho/2, 350, 'My best SCORE WAS: '+localStorage.getItem('best'),this.textStyle)
+        this.textBest = this.add.text(gameOptions.ancho/2, 350, 'Mejor puntuacion: '+localStorage.getItem('best'),this.textStyle)
         .setOrigin(0.5);
         this.textBest.setFontSize(40);
         
-        this.play = this.add.text(gameOptions.ancho/2, 450, 'Press Space to reStart!',this.textStyle)
+        this.play = this.add.text(gameOptions.ancho/2, 450, 'Presiona espacio para volver a empezar!',this.textStyle)
         .setOrigin(0.5);
         this.play.setFontSize(40);
         //.setInteractive();
