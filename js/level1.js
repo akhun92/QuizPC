@@ -135,9 +135,11 @@ class level1 extends Phaser.Scene
          fontSize:20
         };
         
-        this.preguntaText = this.add.text(gameOptions.ancho/2, 150, 
-        gameOptions.questions.Questions[this.ordenPreguntas[this.preguntaActual]].Question,this.preguntaStyle)        .setOrigin(0.5);
+        
         this.imagen = this.add.image(gameOptions.ancho/2,gameOptions.alto/2,'image'+this.ordenPreguntas[0]);
+
+        this.preguntaText = this.add.text(gameOptions.ancho/2, 150, 
+            gameOptions.questions.Questions[this.ordenPreguntas[this.preguntaActual]].Question,this.preguntaStyle)        .setOrigin(0.5);
 
         this.opcionA = this.add.text(gameOptions.ancho/2, 400, 
         gameOptions.questions.Questions[this.ordenPreguntas[this.preguntaActual]].OptionA,this.preguntaStyle)
