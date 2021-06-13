@@ -68,8 +68,6 @@
         {
             "QuestionID": "6",
             "Question": "¿Qué es Windows?",
-            "Difficulty": "Easy",
-            "Thematic": "Grammar",
             "OptionA": "Una ventana",
             "OptionB": "Un editor de imagenes",
             "OptionC": "Una componente",

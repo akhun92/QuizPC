@@ -138,8 +138,8 @@ class level1 extends Phaser.Scene
         this.preguntaText = this.add.text(gameOptions.ancho/2, 150, 
         gameOptions.questions.Questions[this.ordenPreguntas[this.preguntaActual]].Question,this.preguntaStyle)        .setOrigin(0.5);
         this.imagen = this.add.image(gameOptions.ancho/2,gameOptions.alto/2,'image'+this.ordenPreguntas[0]);
-    
-        this.opcionA = this.add.text(gameOptions.ancho/2-200, 400, 
+
+        this.opcionA = this.add.text(gameOptions.ancho/2, 400, 
         gameOptions.questions.Questions[this.ordenPreguntas[this.preguntaActual]].OptionA,this.preguntaStyle)
         .setOrigin(0.5);
         
@@ -155,15 +155,15 @@ class level1 extends Phaser.Scene
             this.opcionA.setStroke('black',4);    
         },this);
         */
-        this.opcionB = this.add.text(gameOptions.ancho/2-50, 400, 
+        this.opcionB = this.add.text(gameOptions.ancho/2, 420, 
         gameOptions.questions.Questions[this.ordenPreguntas[this.preguntaActual]].OptionB,this.preguntaStyle)
         .setOrigin(0.5);
                 
-        this.opcionC = this.add.text(gameOptions.ancho/2+50, 400, 
+        this.opcionC = this.add.text(gameOptions.ancho/2, 440, 
         gameOptions.questions.Questions[this.ordenPreguntas[this.preguntaActual]].OptionC,this.preguntaStyle)
         .setOrigin(0.5);
         
-        this.opcionD = this.add.text(gameOptions.ancho/2+200, 400, 
+        this.opcionD = this.add.text(gameOptions.ancho/2, 460, 
         gameOptions.questions.Questions[this.ordenPreguntas[this.preguntaActual]].OptionD,this.preguntaStyle)
         .setOrigin(0.5);
         
@@ -254,6 +254,7 @@ class level1 extends Phaser.Scene
         this.opcionB.destroy();
         this.opcionC.destroy();
         this.opcionD.destroy();
+        this.reloj.timer.destroy();
         this.reloj.destroy();
         
     }
