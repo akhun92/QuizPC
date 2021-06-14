@@ -41,6 +41,8 @@ class level1 extends Phaser.Scene
         this.pintaPuntuacion();
                         
         this.loadInputManager();
+
+        this.pintaComodines();
         
         this.pintaTimer();
         
@@ -282,6 +284,32 @@ class level1 extends Phaser.Scene
                 blendMode: 'ADD'
             });
         }
+    }
+
+        
+    pintaComodines()
+    {
+        
+        this.comodin = this.add.sprite(50,gameOptions.alto/2,'wildcard').setScale(.5).setInteractive({useHandCursor: true});
+        
+        this.comodin.on('pointerup',function(pointer)
+        {
+            var respuestasPendientes = 2;
+            
+            for(var i in this.botones)
+                {
+                    if(this.botones[i].text !=gameOptions.questions.Questions[this.ordenPreguntas[0]].Correct)
+                    {
+                        this.botones[i].setColor('red');
+                        respuestasPendientes--;
+                        if(respuestasPendientes==0)
+                        {
+                            break;
+                        }
+                        this.comodin.destroy();
+                    }
+                }    
+        },this);
     }
     
     
